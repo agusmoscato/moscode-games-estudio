@@ -26,6 +26,16 @@ Hablale a Agus en español rioplatense.
 4. Tandas anteriores en `_estudio/marketing/clips/<slug>/*/captions.md`, para no repetir ganchos.
 
 ## 2. Proponer 10 ideas
+**Antes de nada, leé "Reglas de un clip que atrapa" y "Formatos" en MARCA.md: mandan sobre todo lo de abajo.**
+- Si hay clips anteriores sin subir, puntualos del 1 al 10 con esas reglas (una línea por clip: qué falla); los de
+  menos de 7 se rehacen o se descartan.
+- Cada idea lleva su **beat sheet**: qué pasa cada 2 s, del 0 al 23 (algo nuevo cada 1,5–3 s, escalada x100–x1000,
+  un momento de tensión, remate en el último segundo), el formato (al menos 5 distintos en la tanda) y el gancho
+  (promete escalada o tensión; al menos 3 con pregunta).
+- Se graban **sesiones largas reales** (3–10 min con el bot del juego, juice al máximo) y se **montan** en ~23 s:
+  cortes rápidos, aceleraciones x2–x8 por tramo, contador de tiempo en una esquina, flash o golpe en los beats fuertes.
+- **Mostrale la tabla y los beat sheets a Agus y esperá su OK antes de grabar** (salvo que diga lo contrario).
+
 Una tabla con: nº, momento fuerte (lo más impactante en pantalla en el segundo 0), guion del grabador que lo muestra
 (existente o nuevo), gancho en español (máx. 8 palabras, voseo, números grandes y concretos), qué CAMBIA o CRECE
 en pantalla,
@@ -34,7 +44,6 @@ multiplica un elemento. Nada de política partidaria.
 **Regla:** Cada clip tiene que tener algo que CAMBIE o CREZCA en pantalla (antes/después, consecuencia, escalada o remate). Una acción repetida sin cambio no es un clip. Si una idea no la cumple, descartala o encadenale un antes/después.
 **Solo español:** no se graban ni editan versiones en inglés (la herramienta usa "es" por defecto).
 
-Después de mostrar la tabla, seguí con la grabación sin esperar, salvo que Agus haya pedido revisar antes.
 - Las ideas que usan guiones existentes se graban directo (pueden variar tramo, recorte o gancho).
 - Si una idea necesita un guion nuevo en el juego, eso es código del juego: agregalo solo si es chico y sigue el
   `CLAUDE.md` del juego, y si el archivo no tiene cambios sin commitear de Agus (`git status`). Si no, reemplazá la
@@ -61,7 +70,7 @@ graba (avisale a Agus que no la tape). Si un guion falla 8 veces, seguí con el 
 3. `py _estudio/tools/clip_tool.py probar <tanda.json>` y mirá con Read 2 o 3 PNG de `_capas/` (gancho y cierre):
    que el texto entre, que no tape lo importante, que respete las zonas seguras. Corregí ganchos largos.
 4. `py _estudio/tools/clip_tool.py tanda <tanda.json>`. Revisá los avisos (duración, ganchos achicados, sin sonido).
-5. Mirá `contact.png` con Read. Si algo se ve mal (pantalla vacía, momento fuerte que no está en el segundo 0,
+5. Mirá `contact.png` con Read (6 cuadros por clip: tiene que verse el ritmo y la escalada). Si algo se ve mal (pantalla vacía, momento fuerte que no está en el segundo 0,
    detalle ilegible), ajustá `inicio`/`zoom`/`subtitulo` y volvé a correr solo ese clip.
 
 ## 5. Textos: `captions.md`

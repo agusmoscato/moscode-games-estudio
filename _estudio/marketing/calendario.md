@@ -10,13 +10,15 @@ La columna "clip" usa el mismo id que `metricas.csv`: `AAAA-MM-DD/NN-nombre-idio
 
 | fecha | juego | clip | TikTok | Shorts | Reels | Reddit |
 |---|---|---|---|---|---|---|
-| 2026-11-17 19–21 h | inflation | 2026-11-16/07-remarcar-es |  |  |  |  |
-| 2026-11-18 19–21 h | inflation | 2026-11-16/06-imprenta-es |  |  |  |  |
-| 2026-11-19 19–21 h | inflation | 2026-11-16/09-tijera-larga-es |  |  |  |  |
-| 2026-11-20 19–21 h | inflation | 2026-11-16/03-sobres-es |  |  |  |  |
+| 2026-11-17 19–21 h | inflation | 2026-11-16-b/01-casi-pierdo-es |  |  |  |  |
+| 2026-11-18 19–21 h | inflation | 2026-11-16-b/02-progresion-es |  |  |  |  |
+| 2026-11-19 19–21 h | inflation | 2026-11-16-b/03-imprenta-es |  |  |  |  |
+| 2026-11-20 19–21 h | inflation | (paso 2) C · vuelta 1 vs. vuelta 10 |  |  |  |  |
 | 2026-11-21 19–21 h | estudio | presentacion/2026-11-16/presentacion-vertical-es — **PRESENTACIÓN del estudio: fijarla arriba en los 3 perfiles (portada: segundo 3,8)** |  |  |  |  |
-| 2026-11-22 19–21 h | inflation | 2026-11-16/04-raspaditas-es |  |  |  |  |
-| 2026-11-23 19–21 h | inflation | 2026-11-16/02-billetes-es |  |  |  |  |
-| 2026-11-24 19–21 h | inflation | 2026-11-16/05-diez-negocios-es |  |  |  |  |
-| 2026-11-25 19–21 h | inflation | 2026-11-16/08-noticias-es |  |  |  |  |
-| 2026-11-26 19–21 h | inflation | 2026-11-16/10-compras-es |  |  |  |  |
+| 2026-11-22 19–21 h | inflation | (paso 2) G · sobres hasta la dorada |  |  |  |  |
+| 2026-11-23 19–21 h | inflation | (paso 2) F · dejé pasar 3 billetes |  |  |  |  |
+| 2026-11-24 19–21 h | inflation | (paso 2) D · lluvia |  |  |  |  |
+| 2026-11-25 19–21 h | inflation | (paso 2) E · decisión con consecuencia |  |  |  |  |
+| 2026-11-26 19–21 h | inflation | (paso 2) H · raspaditas |  |  |  |  |
+
+La tanda anterior (`clips/inflation/2026-11-16/`) no se sube: se rehízo con las reglas de clips que atrapan (MARCA.md).

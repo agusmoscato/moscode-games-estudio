@@ -31,6 +31,13 @@ El formato de `tanda.json` está explicado arriba de todo en `clip_tool.py`. Lo 
 
 La `tanda.json` de cada tanda queda guardada junto a los clips, así se puede rehacer cambiando un gancho.
 
+### Montaje (clips que atrapan)
+Un clip puede llevar `"montaje"` en vez de `"fuente"`: tramos de una sesión larga real (3–10 min del bot), cada uno con
+su aceleración (`"vel"`: x2–x8 en lo lento, x1 en los picos), `"golpe"` (flash + refuerzo del sonido del juego al
+empezar el tramo), `"zoom"` y `"fuente"` propia (para mezclar sesiones, p. ej. vuelta 1 y vuelta 36). `"contador"`
+pone "Minuto N" arriba a la izquierda según el tiempo real de la grabación; `"etiqueta"` lo pisa por tramo
+("Vuelta 36 · Hora 2"). La duración del clip es la suma de los tramos. Ejemplo: `_estudio/marketing/clips/inflation/2026-11-16-b/tanda.json`.
+
 ### Presentación del estudio
 ```
 py _estudio/tools/clip_tool.py presentacion <presentacion.json>

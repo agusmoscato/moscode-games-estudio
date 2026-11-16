@@ -1,0 +1,246 @@
+{
+  "juego": "inflation",
+  "titulo": "INFLATION?",
+  "salida": "_estudio/marketing/clips/inflation/2026-11-16-b",
+  "formato": "vertical",
+  "idiomas": [
+    "es"
+  ],
+  "cta": {
+    "es": "Demo gratis en itch.io"
+  },
+  "clips": [
+    {
+      "n": 1,
+      "nombre": "casi-pierdo",
+      "gancho": {
+        "es": "Casi me funde la inflación"
+      },
+      "montaje": {
+        "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_casi_pierdo_{idioma}_1920x1080.mp4",
+        "contador": {
+          "formato": "Minuto {m}",
+          "origen": 0
+        },
+        "tramos": [
+          {
+            "desde": 129.0,
+            "hasta": 131.0,
+            "vel": 1,
+            "golpe": true
+          },
+          {
+            "desde": 0.5,
+            "hasta": 15.0,
+            "vel": 7.25,
+            "golpe": true
+          },
+          {
+            "desde": 60.0,
+            "hasta": 105.0,
+            "vel": 22.5
+          },
+          {
+            "desde": 109.5,
+            "hasta": 114.0,
+            "vel": 1.5,
+            "golpe": true
+          },
+          {
+            "desde": 124.5,
+            "hasta": 129.5,
+            "vel": 1.667,
+            "golpe": true
+          },
+          {
+            "desde": 129.5,
+            "hasta": 138.5,
+            "vel": 3
+          },
+          {
+            "desde": 138.5,
+            "hasta": 141.0,
+            "vel": 1,
+            "golpe": true
+          },
+          {
+            "desde": 176.0,
+            "hasta": 182.0,
+            "vel": 2,
+            "golpe": true
+          },
+          {
+            "desde": 200.0,
+            "hasta": 290.0,
+            "vel": 30
+          }
+        ]
+      }
+    },
+    {
+      "n": 2,
+      "nombre": "progresion",
+      "gancho": {
+        "es": "De vender empanadas a imprimir billetes"
+      },
+      "montaje": {
+        "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_progresion_{idioma}_1920x1080.mp4",
+        "tramos": [
+          {
+            "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_vuelta1_{idioma}_1920x1080.mp4",
+            "desde": 1.5,
+            "hasta": 7.5,
+            "vel": 3,
+            "golpe": true,
+            "etiqueta": "Vuelta 1 · Minuto 1"
+          },
+          {
+            "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_vuelta1_{idioma}_1920x1080.mp4",
+            "desde": 12.0,
+            "hasta": 16.0,
+            "vel": 2,
+            "golpe": true,
+            "etiqueta": "Vuelta 1 · Minuto 1"
+          },
+          {
+            "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_vuelta1_{idioma}_1920x1080.mp4",
+            "desde": 24.0,
+            "hasta": 30.0,
+            "vel": 3,
+            "golpe": true,
+            "etiqueta": "Vuelta 1 · Minuto 1"
+          },
+          {
+            "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_vuelta1_{idioma}_1920x1080.mp4",
+            "desde": 58.0,
+            "hasta": 64.0,
+            "vel": 3,
+            "golpe": true,
+            "etiqueta": "Vuelta 1 · Minuto 2"
+          },
+          {
+            "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_vuelta1_{idioma}_1920x1080.mp4",
+            "desde": 120.0,
+            "hasta": 135.0,
+            "vel": 7.5,
+            "etiqueta": "Vuelta 1 · Minuto 3"
+          },
+          {
+            "desde": 1.5,
+            "hasta": 3.6,
+            "vel": 1,
+            "golpe": true,
+            "etiqueta": "Vuelta 36 · Hora 2"
+          },
+          {
+            "desde": 4.5,
+            "hasta": 7.5,
+            "vel": 1.5,
+            "golpe": true,
+            "etiqueta": "Vuelta 36 · Hora 2"
+          },
+          {
+            "desde": 8.8,
+            "hasta": 11.8,
+            "vel": 1.5,
+            "golpe": true,
+            "etiqueta": "Vuelta 36 · Hora 2"
+          },
+          {
+            "desde": 20.8,
+            "hasta": 24.8,
+            "vel": 2,
+            "golpe": true,
+            "etiqueta": "Vuelta 36 · Hora 2"
+          },
+          {
+            "desde": 40.0,
+            "hasta": 60.0,
+            "vel": 10,
+            "etiqueta": "Vuelta 36 · Hora 2"
+          },
+          {
+            "desde": 60.0,
+            "hasta": 71.4,
+            "vel": 3.8,
+            "golpe": true,
+            "etiqueta": "Vuelta 36 · Hora 2"
+          }
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "nombre": "imprenta",
+      "gancho": {
+        "es": "Compré 500 imprentas de billetes"
+      },
+      "montaje": {
+        "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_imprenta_{idioma}_1920x1080.mp4",
+        "contador": {
+          "formato": "Minuto {m}",
+          "origen": 0
+        },
+        "tramos": [
+          {
+            "desde": 0.6,
+            "hasta": 2.6,
+            "vel": 1,
+            "golpe": true
+          },
+          {
+            "desde": 2.6,
+            "hasta": 6.6,
+            "vel": 2,
+            "golpe": true
+          },
+          {
+            "desde": 6.6,
+            "hasta": 12.6,
+            "vel": 3,
+            "golpe": true
+          },
+          {
+            "desde": 19.5,
+            "hasta": 23.5,
+            "vel": 2,
+            "golpe": true
+          },
+          {
+            "desde": 30.0,
+            "hasta": 50.0,
+            "vel": 10
+          },
+          {
+            "desde": 50.0,
+            "hasta": 70.0,
+            "vel": 10,
+            "golpe": true
+          },
+          {
+            "desde": 70.0,
+            "hasta": 100.0,
+            "vel": 15
+          },
+          {
+            "desde": 100.0,
+            "hasta": 130.0,
+            "vel": 15,
+            "golpe": true
+          },
+          {
+            "desde": 130.0,
+            "hasta": 145.0,
+            "vel": 4
+          },
+          {
+            "desde": 145.0,
+            "hasta": 150.0,
+            "vel": 1,
+            "golpe": true
+          }
+        ]
+      }
+    }
+  ]
+}

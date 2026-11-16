@@ -61,6 +61,21 @@ Sin degradados ni esquinas redondas. Bordes de 4–6 px en tinta y sombra dura d
 - Fondo de cierres y carteles: tinta #18191C.
 - Salida: `clips/AAAA-MM-DD/NN-nombre-es.mp4`, más una hoja de contacto (`contact.png`) para revisar de un vistazo.
 
+## Reglas de un clip que atrapa (todas las tandas)
+1. **Segundo 0 en el pico**: arranca en el medio de la acción, con la pantalla ya llena (números volando, partículas, algo moviéndose). Nunca una pantalla quieta o casi vacía.
+2. **Algo nuevo cada 1,5–3 s ("beat")**: un negocio nuevo, un número que salta, un evento, una explosión, un cartel del juego. Más de 3 s sin un cambio visible → se corta.
+3. **Escalada**: empieza chico y termina ENORME. Los números crecen x100 o x1000 en el clip (de $500 a $50 millones, de 1 negocio a 10, de 1 billete a una lluvia). El final siempre es lo más grande del video.
+4. **Tensión**: en algún momento casi pierde (la inflación lo está comiendo, el pizarrón en rojo, la plata no alcanza) y se salva justo con una buena jugada.
+5. **Montaje, no tiempo real**: se graban sesiones largas (3–10 min de juego real con el bot) y se comprimen en ~23 s con cortes rápidos y aceleraciones (x2–x8 en los tramos lentos). Contador chico en una esquina ("Día 1 → Día 90", "Minuto 1 → Minuto 30") para que se entienda que pasó tiempo.
+6. **Remate o loop**: el último segundo es el pico (el número más grande, la dorada, la tijera) o empalma con el principio para que se vea dos veces.
+7. **El gancho promete la escalada o la tensión**, no la acción repetida ("De vender empanadas a imprimir billetes", "Casi me funde la inflación", "¿Cuánto podés juntar antes de que te coma la inflación?").
+8. **Preguntas**: al menos 3 clips por tanda terminan (gancho o caption) con una pregunta que invite a comentar ("¿Qué hubieras comprado vos?", "¿Hasta dónde llegás?").
+9. **Juice al máximo**: al grabar, las opciones más altas del juego (partículas, sacudón, calidad, volumen de efectos).
+
+**Formatos** (al menos 5 distintos por tanda): progresión comprimida (una partida entera en 23 s) · casi pierdo (se dispara, pizarrón rojo, remontada) · decisión con consecuencia (elige y se ve el resultado grande) · antes / después (minuto 1 vs. minuto 30, o antes y después de la tijera) · lluvia (abundancia exagerada que termina en algo enorme) · error que da bronca (una jugada medio mala a propósito que se paga, para que comenten "yo lo hacía mejor") · suspenso con remate (sobres o raspaditas acelerados: solo la tensión y el premio).
+
+**Revisión**: cada clip se puntúa del 1 al 10 con estas reglas; menos de 7 se rehace o se descarta. La hoja de contacto muestra 6 cuadros por clip para ver el ritmo.
+
 ## Textos de publicación (`clips/AAAA-MM-DD/captions.md`)
 Para cada clip:
 - TikTok / Reels: 1 línea con gancho + pregunta para que comenten + 3–5 hashtags (#indiegame #gamedev #godot + los del género de ESTE juego + el del juego).

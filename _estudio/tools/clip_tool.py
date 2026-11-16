@@ -426,6 +426,111 @@ def unir_tramos(clip: dict, idioma: str, destino: Path, lienzo_def=(1080, 1080))
     return destino
 
 
+# ---------------------------------------------------------------- montaje (clips "que atrapan", MARCA.md)
+# "montaje": {"fuente": ".../sesion_x_{idioma}_1920x1080.mp4",
+#             "contador": {"formato": "Minuto {m}", "origen": 0},          # opcional: "Minuto N" en una esquina
+#             "tramos": [{"desde": 12.0, "hasta": 40.0, "vel": 8, "golpe": true, "zoom": {...}, "etiqueta": "Vuelta 10"}]}
+# Cada tramo se corta de la grabación larga y se acelera "vel" veces (x2–x8 en los tramos lentos, x1 en los picos);
+# "golpe" = flash corto + refuerzo del sonido del juego al empezar el tramo; "etiqueta" pisa el contador en ese tramo.
+def montaje_duracion(mt: dict) -> float:
+    return round(sum((float(t["hasta"]) - float(t["desde"])) / float(t.get("vel", 1)) for t in mt["tramos"]), 3)
+
+
+def cadena_atempo(vel: float) -> str:
+    """atempo acepta 0,5–2 por filtro: se encadena (x8 = 2·2·2). Mantiene el tono del sonido."""
+    partes, v = [], vel
+    while v > 2.0:
+        partes.append("atempo=2.0")
+        v /= 2.0
+    partes.append(f"atempo={v:.4f}")
+    return ",".join(partes)
+
+
+def capa_contador(W: int, H: int, texto: str) -> Image.Image:
+    """Contador chico arriba a la izquierda (fuera de la caja de gancho y de las zonas tapadas por las apps)."""
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    f = fuente_texto(40)
+    w = int(f.getlength(texto))
+    x0, y0 = 40, 60
+    caja_marca(d, x0, y0, x0 + w + 36, y0 + alto_linea(f) + 18, TINTA, PAPEL, ROJO, 6, 4)
+    d.text((x0 + 18, y0 + 8), texto, font=f, fill=AMARILLO)
+    return img
+
+
+def montar(clip: dict, idioma: str, destino: Path) -> Path | None:
+    mt = clip["montaje"]
+    cmd = [FFMPEG, "-y", "-v", "error"]
+    filtros, pares = [], []
+    for i, t in enumerate(mt["tramos"]):
+        # cada tramo puede venir de otra grabación ("fuente" del tramo); si no, la del montaje
+        src = ruta_abs(str(por_idioma(t.get("fuente", mt.get("fuente")), idioma)).replace("{idioma}", idioma))
+        if not src.exists():
+            avisar(f"montaje: no existe {src}")
+            return None
+        con_audio = sondear(src)["audio"]
+        a, b, v = float(t["desde"]), float(t["hasta"]), float(t.get("vel", 1))
+        d_out = (b - a) / v
+        cmd += ["-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", str(src)]
+        filtros.append(f"[{i}:v]setpts=(PTS-STARTPTS)/{v},fps={FPS},scale=1920:1080:force_original_aspect_ratio=decrease,"
+                       f"pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=0x18191C,setsar=1,{filtro_zoom(t.get('zoom'))}"
+                       f"tpad=stop_mode=clone:stop_duration={d_out:.3f},trim=duration={d_out:.3f},setpts=PTS-STARTPTS[v{i}]")
+        if con_audio:
+            golpe = ",volume=volume='if(lt(t,0.25),2.0,1)':eval=frame" if t.get("golpe") else ""
+            filtros.append(f"[{i}:a]aresample=48000,aformat=channel_layouts=stereo,asetpts=PTS-STARTPTS,{cadena_atempo(v)}"
+                           f"{golpe},apad,atrim=duration={d_out:.3f},asetpts=PTS-STARTPTS[a{i}]")
+        else:
+            filtros.append(f"anullsrc=r=48000:cl=stereo,atrim=duration={d_out:.3f}[a{i}]")
+        pares.append(f"[v{i}][a{i}]")
+    filtros.append(f"{''.join(pares)}concat=n={len(pares)}:v=1:a=1[v][a]")
+    cmd += ["-filter_complex", ";".join(filtros), "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "fast",
+            "-crf", "14", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", str(destino)]
+    correr(cmd)
+    return destino
+
+
+def capas_montaje(clip: dict, W: int, H: int, base: str, capas: Path, hasta: float) -> list[tuple[Path, str]]:
+    """Contador (cambia con el tiempo real de la grabación) y flashes de los golpes, con su ventana en el clip."""
+    mt = clip["montaje"]
+    out: list[tuple[Path, str]] = []
+    flash = capas / f"{base}-flash.png"
+    Image.new("RGBA", (W, H), (255, 246, 210, 120)).save(flash)
+    cont = mt.get("contador")
+    t_out = 0.0
+    hechos: dict[str, Path] = {}
+    for i, t in enumerate(mt["tramos"]):
+        a, b, v = float(t["desde"]), float(t["hasta"]), float(t.get("vel", 1))
+        d_out = (b - a) / v
+        if t.get("golpe") and t_out < hasta:
+            out.append((flash, f"between(t,{t_out:.3f},{t_out + 0.12:.3f})"))
+        if cont or t.get("etiqueta"):
+            # cortes del tramo donde cambia la etiqueta (cada minuto de la grabación)
+            puntos = [a]
+            if not t.get("etiqueta"):
+                o = float(cont.get("origen", 0))
+                k = int((a - o) // 60) + 1
+                while o + 60 * k < b:
+                    puntos.append(o + 60 * k)
+                    k += 1
+            puntos.append(b)
+            for j in range(len(puntos) - 1):
+                s0, s1 = puntos[j], puntos[j + 1]
+                if t.get("etiqueta"):
+                    txt = t["etiqueta"]
+                else:
+                    txt = cont.get("formato", "Minuto {m}").format(m=int((s0 - float(cont.get("origen", 0))) // 60) + 1)
+                o0, o1 = t_out + (s0 - a) / v, min(t_out + (s1 - a) / v, hasta)
+                if o0 >= hasta:
+                    continue
+                if txt not in hechos:
+                    p = capas / f"{base}-cont{len(hechos)}.png"
+                    capa_contador(W, H, txt).save(p)
+                    hechos[txt] = p
+                out.append((hechos[txt], f"between(t,{o0:.3f},{o1:.3f})"))
+        t_out += d_out
+    return out
+
+
 def armar_clip(tanda: dict, clip: dict, idioma: str, salida: Path, capas: Path, solo_capas: bool) -> Path | None:
     vertical = tanda.get("formato", "vertical") == "vertical"
     W, H = (1080, 1920) if vertical else (1920, 1080)
@@ -434,6 +539,8 @@ def armar_clip(tanda: dict, clip: dict, idioma: str, salida: Path, capas: Path, 
     n = int(clip.get("n", 1))
     base = f"{n:02d}-{clip['nombre']}-{idioma}"
     dur = float(clip.get("duracion", 18))
+    if clip.get("montaje"):
+        dur = montaje_duracion(clip["montaje"])          # la duración la dan los tramos
     lim = (15, 25) if vertical else (30, 45)
     if not lim[0] <= dur <= lim[1]:
         avisar(f"{base}: dura {dur:g} s (lo pedido es {lim[0]}–{lim[1]} s)")
@@ -454,6 +561,8 @@ def armar_clip(tanda: dict, clip: dict, idioma: str, salida: Path, capas: Path, 
             p = capas / f"{base}-subtitulo.png"
             capa_subtitulo(W, H, sub).save(p)
             capas_png.append((p, f"lt(t,{fin_gancho:.3f})"))
+    if clip.get("montaje"):
+        capas_png += capas_montaje(clip, W, H, base, capas, dur - CIERRE_S if con_cierre else dur)
     if gancho:
         p = capas / f"{base}-gancho.png"
         capa_gancho(W, H, tanda.get("titulo", ""), gancho).save(p)
@@ -472,8 +581,13 @@ def armar_clip(tanda: dict, clip: dict, idioma: str, salida: Path, capas: Path, 
     if solo_capas:
         return None
 
-    # fuente: una grabación, o varios tramos que se cortan, se recortan y se unen en una sola
-    if clip.get("tramos"):
+    # fuente: una grabación, un montaje de una sesión larga, o varios tramos que se unen en una sola
+    if clip.get("montaje"):
+        src = montar(clip, idioma, capas / f"{base}-montaje.mp4")
+        if src is None:
+            return None
+        clip = {k: v for k, v in clip.items() if k not in ("recorte", "inicio", "zoom")}
+    elif clip.get("tramos"):
         src = unir_tramos(clip, idioma, capas / f"{base}-fuente.mp4",
                           (1920, 1080) if modo in ("blur", "horizontal") else (1080, 1080))
         if src is None:
@@ -573,9 +687,11 @@ def hoja_contacto(carpeta: Path, por_seccion: dict[str, list[float]] | None = No
                 filas.append((v, info, cuadros, "un cuadro por sección"))
                 continue
             ancho = 216 if vertical else 384
-            tiempos = [0.4, info["dur"] * 0.35, info["dur"] * 0.7, info["dur"] - 0.6]
+            # 6 cuadros por clip, para ver el ritmo y la escalada (MARCA.md)
+            dd = info["dur"]
+            tiempos = [0.3, dd * 0.2, dd * 0.4, dd * 0.6, dd * 0.8, dd - 0.6]
             cuadros = [cuadro(v, t, ancho, tmp) for t in tiempos]
-            filas.append((v, info, cuadros, "0,4 s / 35 % / 70 % / cierre"))
+            filas.append((v, info, cuadros, "0 / 20 / 40 / 60 / 80 % / cierre"))
         fl = fuente_texto(28)
         sep, cab = 16, 44
         ancho_total = sep + max(sum(c.width + sep for c in cs) for _, _, cs, _ in filas)
