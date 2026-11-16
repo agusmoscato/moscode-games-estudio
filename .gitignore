@@ -1,0 +1,24 @@
+# Repo del estudio moscode.games: lista blanca.
+# Se ignora todo lo de la raíz salvo lo del estudio. Las carpetas de los juegos (INFLATION-What-Inflation-,
+# FiestaFatal, Plastiquito y las que vengan) tienen su propio repo y NO entran acá.
+/*
+!/.gitignore
+!/README.md
+!/CLAUDE.md
+!/.claude/
+!/_estudio/
+
+# Configuración local de Claude Code (permisos de esta PC)
+/.claude/settings.local.json
+
+# Videos y audio crudos: se regeneran con las herramientas (tanda.json / presentacion.json) y harían el repo enorme.
+# Sí se versionan captions.md, tanda.json, guion.md, presentacion.json y contact.png.
+_estudio/**/*.mp4
+_estudio/**/*.mov
+_estudio/**/*.wav
+_estudio/**/*.avi
+_estudio/**/_capas/
+
+# Python
+__pycache__/
+*.pyc

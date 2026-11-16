@@ -1,0 +1,27 @@
+{
+  "juego": "inflation",
+  "titulo": "INFLATION?",
+  "salida": "_estudio/marketing/presentacion/inflation/2026-11-16",
+  "formato": "vertical",
+  "idiomas": ["en", "es"],
+  "cta": {"en": "Free demo on itch.io", "es": "Demo gratis en itch.io"},
+  "clips": [{
+    "n": 1,
+    "nombre": "presentacion",
+    "duracion": 21.5,
+    "layout": "cuadrado",
+    "lienzo": [1080, 1080],
+    "tramos": [
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/tijera_{idioma}_1920x1080.mp4", "inicio": 2.2, "dur": 3.4, "recorte": [480, 60, 960, 720]},
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/billete_{idioma}_1920x1080.mp4", "inicio": 0.3, "dur": 5.0, "recorte": [0, 0, 1440, 1080]},
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/sobre_dorada_{idioma}_1920x1080.mp4", "inicio": 1.4, "dur": 7.0, "recorte": [240, 240, 1440, 720]},
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/trillon_cafe_{idioma}_1920x1080.mp4", "inicio": 1.0, "dur": 4.6, "recorte": [0, 0, 960, 720]}
+    ],
+    "gancho": {"en": "Argentina's inflation was so bad I made this", "es": "La inflación argentina me hizo hacer esto"},
+    "globos": [
+      {"desde": 3.6, "hasta": 8.2, "personaje": "agus-principal", "texto": {"en": "Solo dev from Argentina", "es": "Dev solo, desde Argentina"}},
+      {"desde": 9.0, "hasta": 14.8, "personaje": "agus-principal", "texto": {"en": "There's even a sticker album", "es": "Hay hasta álbum de figuritas"}},
+      {"desde": 15.6, "hasta": 20.0, "personaje": "agus-principal", "texto": {"en": "How much is an empanada where you live?", "es": "¿Cuánto sale una empanada en tu país?"}}
+    ]
+  }]
+}

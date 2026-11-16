@@ -1,0 +1,32 @@
+{
+  "juego": "inflation",
+  "titulo": "INFLATION? What Inflation?",
+  "salida": "_estudio/marketing/presentacion/inflation/2026-11-16",
+  "formato": "horizontal",
+  "idiomas": ["en", "es"],
+  "cta": {"en": "Free demo on itch.io", "es": "Demo gratis en itch.io"},
+  "clips": [{
+    "n": 2,
+    "nombre": "trailer",
+    "duracion": 36,
+    "layout": "completo",
+    "lienzo": [1920, 1080],
+    "tramos": [
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/tijera_{idioma}_1920x1080.mp4", "inicio": 2.0, "dur": 4.0},
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/precio_empanada_{idioma}_1920x1080.mp4", "inicio": 0.5, "dur": 6.0},
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/billete_{idioma}_1920x1080.mp4", "inicio": 1.0, "dur": 6.0},
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/sobre_dorada_{idioma}_1920x1080.mp4", "inicio": 1.4, "dur": 7.0},
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/arbol_{idioma}_1920x1080.mp4", "inicio": 1.5, "dur": 7.0},
+      {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/trillon_cafe_{idioma}_1920x1080.mp4", "inicio": 1.0, "dur": 4.5}
+    ],
+    "gancho": {"en": "A clicker about Argentine inflation", "es": "Un clicker sobre la inflación argentina"},
+    "gancho_hasta": 4.0,
+    "globos": [
+      {"desde": 4.3, "hasta": 9.8, "personaje": "agus-principal", "texto": {"en": "I'm a solo dev from Argentina", "es": "Soy dev solo, de Argentina"}},
+      {"desde": 10.3, "hasta": 15.8, "personaje": "agus-principal", "texto": {"en": "Catch the flying bills", "es": "Atrapá los billetes que vuelan"}},
+      {"desde": 16.3, "hasta": 22.8, "personaje": "agus-principal", "texto": {"en": "Collect 60 stickers", "es": "Llená el álbum de 60 figuritas"}},
+      {"desde": 23.3, "hasta": 29.8, "personaje": "agus-principal", "texto": {"en": "115 upgrades to beat inflation", "es": "115 mejoras para ganarle a la inflación"}},
+      {"desde": 30.3, "hasta": 34.3, "personaje": "agus-principal", "texto": {"en": "Free demo out now", "es": "Demo gratis ya disponible"}}
+    ]
+  }]
+}

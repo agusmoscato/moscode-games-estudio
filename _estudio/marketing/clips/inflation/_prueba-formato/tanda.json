@@ -1,0 +1,26 @@
+{
+  "juego": "inflation",
+  "titulo": "INFLATION?",
+  "salida": "_estudio/marketing/clips/inflation/_prueba-formato",
+  "formato": "vertical",
+  "idiomas": ["en", "es"],
+  "cta": {"en": "Free demo on itch.io", "es": "Demo gratis en itch.io"},
+  "clips": [
+    {
+      "n": 1, "nombre": "tijera-blur",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/tijera_{idioma}_1920x1080.mp4",
+      "inicio": 1.5, "duracion": 15,
+      "zoom": {"factor": 1.5, "centro": [960, 540], "desde": 1.0, "dur": 0.8},
+      "gancho": {"en": "Too many zeros?", "es": "¿Demasiados ceros?"},
+      "subtitulo": {"en": "One snip and the zeros are gone", "es": "Un tijeretazo y chau ceros"}
+    },
+    {
+      "n": 2, "nombre": "tijera-recorte",
+      "modo": "recorte",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/tijera_{idioma}.mp4",
+      "inicio": 1.5, "duracion": 15,
+      "layout": "vertical", "recorte": [0, 0, 1080, 1380],
+      "gancho": {"en": "Too many zeros?", "es": "¿Demasiados ceros?"}
+    }
+  ]
+}

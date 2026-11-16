@@ -1,0 +1,173 @@
+{
+  "juego": "inflation",
+  "titulo": "INFLATION?",
+  "salida": "_estudio/marketing/clips/inflation/2026-11-16",
+  "formato": "vertical",
+  "idiomas": [
+    "en",
+    "es"
+  ],
+  "cta": {
+    "en": "Free demo on itch.io",
+    "es": "Demo gratis en itch.io"
+  },
+  "clips": [
+    {
+      "n": 7,
+      "nombre": "remarcar",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/remarcar_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "zoom": {
+        "factor": 1.25,
+        "centro": [
+          790,
+          432
+        ],
+        "desde": 1.0,
+        "dur": 0.8
+      },
+      "gancho": {
+        "en": "Prices go up every 10 seconds. Keep up.",
+        "es": "Los precios suben cada 10 segundos. Seguilos."
+      },
+      "subtitulo": {
+        "en": "Hit REPRICE: prices freeze for 9 s",
+        "es": "Tocás REMARCAR: precios congelados 9 s"
+      }
+    },
+    {
+      "n": 6,
+      "nombre": "imprenta",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/imprenta_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "zoom": {
+        "factor": 1.25,
+        "centro": [
+          790,
+          432
+        ],
+        "desde": 1.5,
+        "dur": 0.8
+      },
+      "gancho": {
+        "en": "I printed money. What could go wrong?",
+        "es": "Imprimí billetes. ¿Qué podría salir mal?"
+      },
+      "subtitulo": {
+        "en": "Income x3.6… prices x2",
+        "es": "Ingreso x3,6… precios x2"
+      }
+    },
+    {
+      "n": 9,
+      "nombre": "tijera-larga",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/tijera_larga_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "gancho": {
+        "en": "Too many zeros? Cut them.",
+        "es": "¿Demasiados ceros? Cortalos."
+      },
+      "subtitulo": {
+        "en": "Then start over, faster",
+        "es": "Y arrancás de nuevo, más rápido"
+      }
+    },
+    {
+      "n": 3,
+      "nombre": "sobres",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sobres_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "gancho": {
+        "en": "Opening packs until a golden one",
+        "es": "Abro sobres hasta que sale la dorada"
+      }
+    },
+    {
+      "n": 4,
+      "nombre": "raspaditas",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/raspaditas_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "gancho": {
+        "en": "Three scratch cards. The last one…",
+        "es": "Tres raspaditas. La última…"
+      },
+      "subtitulo": {
+        "en": "Each one costs 5% of your money",
+        "es": "Cada una cuesta el 5 % de tu plata"
+      }
+    },
+    {
+      "n": 1,
+      "nombre": "clics",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/clics_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "zoom": {
+        "factor": 1.5,
+        "centro": [
+          420,
+          360
+        ],
+        "desde": 1.0,
+        "dur": 0.8
+      },
+      "gancho": {
+        "en": "330 clicks on one empanada",
+        "es": "330 clics a una empanada"
+      }
+    },
+    {
+      "n": 2,
+      "nombre": "billetes",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/billetes_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "gancho": {
+        "en": "Catch the bill, get x7",
+        "es": "Agarrá el billete y ganá x7"
+      },
+      "subtitulo": {
+        "en": "x7 production for 15 seconds",
+        "es": "Producción x7 durante 15 segundos"
+      }
+    },
+    {
+      "n": 5,
+      "nombre": "diez-negocios",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/diez_negocios_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "gancho": {
+        "en": "Empanada cart to holding in 20 s",
+        "es": "Del carrito al holding en 20 s"
+      }
+    },
+    {
+      "n": 8,
+      "nombre": "noticias",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/noticias_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "gancho": {
+        "en": "Breaking news: 10 seconds to decide",
+        "es": "Último momento: 10 segundos para elegir"
+      }
+    },
+    {
+      "n": 10,
+      "nombre": "compras",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/compras_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "gancho": {
+        "en": "Buying everything x10",
+        "es": "Comprando todo x10"
+      }
+    }
+  ]
+}
