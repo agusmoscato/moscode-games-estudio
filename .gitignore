@@ -22,3 +22,6 @@ _estudio/**/_capas/
 # Python
 __pycache__/
 *.pyc
+
+# Builds para subir (se regeneran con export_all.ps1 de cada juego)
+_estudio/**/*.zip
