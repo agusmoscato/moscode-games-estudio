@@ -19,9 +19,10 @@ Cuando aparezca un juego nuevo, sumalo a esta tabla (usá /nuevo-juego).
 - Todo lo visual y todos los clips siguen `_estudio/brand/MARCA.md`. Leelo antes de hacer cualquier pieza.
 - Cada juego tiene su propio `CLAUDE.md` con sus reglas técnicas. Si un juego lo contradice en algo técnico, gana el del juego. En marca, gana MARCA.md.
 - Herramientas compartidas (post-proceso de clips con ffmpeg, hojas de contacto, textos) viven en `_estudio/tools/`. Cada juego solo aporta su grabación (Godot `--write-movie` con un bot que juega solo) en `tools/clips/` de su repo.
-- Herramientas: `_estudio/tools/clip_tool.py` (edición de marca, EN/ES, `contact.png`) y `_estudio/tools/metricas.py` (ranking y señales). Se corren con `py` (Python de Windows con Pillow) desde esta carpeta. Ver `_estudio/tools/README.md`.
+- Herramientas: `_estudio/tools/clip_tool.py` (edición de marca, `contact.png`) y `_estudio/tools/metricas.py` (ranking y señales). Se corren con `py` (Python de Windows con Pillow) desde esta carpeta. Ver `_estudio/tools/README.md`.
 - Salidas de marketing: `_estudio/marketing/clips/<slug>/AAAA-MM-DD/` (videos, `tanda.json`, `captions.md`, `contact.png`). Presentación del estudio: `_estudio/marketing/presentacion/AAAA-MM-DD/`.
 - Métricas: `_estudio/marketing/metricas.csv`. Calendario: `_estudio/marketing/calendario.md`. Criterios de "sigo / lo dejo": `_estudio/disenos/validacion.md`.
+- **Solo español**: clips, presentación, captions, guiones y textos van solo en español. No se generan versiones en inglés salvo que Agus lo pida.
 - No subas nada a redes ni hagas commits o push sin que te lo pida.
 - Prioridad actual: 1) INFLATION a itch.io y clips diarios, 2) Steam cuando haya señal, 3) Plastiquito.
 

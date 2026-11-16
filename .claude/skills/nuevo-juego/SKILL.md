@@ -26,7 +26,7 @@ que Agus lo pida (al final ofrecelo).
      ../_estudio/brand/MARCA.md."
    - Una sección "Clips para validar" con las 5 ideas del paso 3.
 2. `<Carpeta>/tools/clips/README.md`: cómo va a grabar este juego (bot que juega solo + Godot `--write-movie`,
-   mp4 crudos en `export/clips_crudos/<guion>_<idioma>.mp4`, sin carteles propios, EN y ES) y que la edición la hace
+   mp4 crudos en `export/clips_crudos/<guion>_<idioma>.mp4`, sin carteles propios, en español) y que la edición la hace
    `_estudio/tools/clip_tool.py`. Si hay proyecto Godot, tomá de modelo `INFLATION-What-Inflation-/tools/clips/`.
 3. `_estudio/marketing/clips/<slug>/`.
 4. Sumá la fila al Mapa de `CLAUDE.md` del estudio (carpeta, slug, qué es, estado "por empezar") sin tocar las demás.
@@ -34,7 +34,7 @@ que Agus lo pida (al final ofrecelo).
 
 ## 3. Cinco clips para validar la idea
 Antes de programar mucho: 5 clips que se puedan hacer con un prototipo de una semana (o con un mockup), cada uno con
-el momento fuerte del segundo 0, gancho EN y ES (máx. 8 palabras), qué hay que prototipar para grabarlo, y qué
+el momento fuerte del segundo 0, gancho en español (máx. 8 palabras) y qué cambia o crece en pantalla, qué hay que prototipar para grabarlo, y qué
 número diría "sigo" (criterios de `_estudio/disenos/validacion.md`: 3 de 5 para seguir; ningún clip arriba de 20K
 después de 10 clips = lo dejo).
 

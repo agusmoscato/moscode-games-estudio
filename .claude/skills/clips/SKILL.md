@@ -5,7 +5,7 @@ description: Graba, edita y escribe los textos de una tanda de clips de marketin
 
 # /clips <juego>
 
-Arma una tanda de clips de un juego: 10 ideas, grabación con el bot del juego, edición de marca en inglés y español,
+Arma una tanda de clips de un juego: 10 ideas, grabación con el bot del juego, edición de marca en español,
 textos de publicación, filas en métricas y los 3 que conviene subir primero. **Nunca publica nada.**
 Hablale a Agus en español rioplatense.
 
@@ -27,9 +27,12 @@ Hablale a Agus en español rioplatense.
 
 ## 2. Proponer 10 ideas
 Una tabla con: nº, momento fuerte (lo más impactante en pantalla en el segundo 0), guion del grabador que lo muestra
-(existente o nuevo), gancho EN y gancho ES (máx. 8 palabras cada uno; ES con voseo; números grandes y concretos),
+(existente o nuevo), gancho en español (máx. 8 palabras, voseo, números grandes y concretos), qué CAMBIA o CRECE
+en pantalla,
 y por qué puede funcionar (con el dato de métricas si lo hay). Fórmula: se entiende en 3 segundos, da gusto mirarlo,
 multiplica un elemento. Nada de política partidaria.
+**Regla:** Cada clip tiene que tener algo que CAMBIE o CREZCA en pantalla (antes/después, consecuencia, escalada o remate). Una acción repetida sin cambio no es un clip. Si una idea no la cumple, descartala o encadenale un antes/después.
+**Solo español:** no se graban ni editan versiones en inglés (la herramienta usa "es" por defecto).
 
 Después de mostrar la tabla, seguí con la grabación sin esperar, salvo que Agus haya pedido revisar antes.
 - Las ideas que usan guiones existentes se graban directo (pueden variar tramo, recorte o gancho).
@@ -52,7 +55,7 @@ graba (avisale a Agus que no la tape). Si un guion falla 8 veces, seguí con el 
    defecto, no hace falta ponerlo): pantalla entera 1080×608 en el medio sobre el mismo video desenfocado.
    - Si un detalle se ve chico, usá `"zoom"` en esa escena (1,3×–1,5×, suave desde la vista completa:
      `{"factor": 1.5, "centro": [x, y], "desde": 1.0, "dur": 0.8}` en px de la grabación). Por defecto, sin zoom.
-   - `"subtitulo"` opcional abajo del juego (una frase corta EN/ES que sume, no que repita el gancho).
+   - `"subtitulo"` opcional abajo del juego (una frase corta que sume, no que repita el gancho).
    - El modo viejo de recorte vertical solo si Agus lo pide (`"modo": "recorte"` o `--modo recorte`).
    Nombres de archivo: `NN-nombre` en minúscula con guiones (el `NN` es el nº de la idea).
 3. `py _estudio/tools/clip_tool.py probar <tanda.json>` y mirá con Read 2 o 3 PNG de `_capas/` (gancho y cierre):
@@ -66,15 +69,15 @@ En la misma carpeta, para cada clip y según MARCA.md:
 - **TikTok / Reels**: 1 línea con el gancho + una pregunta que invite a comentar + 3–5 hashtags
   (#indiegame #gamedev #godot + los del género del juego + el del juego).
 - **YouTube Shorts**: título de 60 caracteres o menos + la misma descripción.
-- En inglés y en español (ES con voseo).
-Arriba de todo, una tabla con nº, archivo EN, archivo ES, gancho y duración.
+- Solo en español (voseo).
+Arriba de todo, una tabla con nº, archivo, gancho y duración.
 
 ## 6. Métricas y calendario
-- Sumá a `_estudio/marketing/metricas.csv` una fila por clip en inglés y por red (`tiktok`, `shorts`, `reels`):
-  `fecha` = día planeado de publicación, `juego` = slug, `clip` = `AAAA-MM-DD/NN-nombre-en`, números vacíos,
+- Sumá a `_estudio/marketing/metricas.csv` una fila por clip y por red (`tiktok`, `shorts`, `reels`):
+  `fecha` = día planeado de publicación, `juego` = slug, `clip` = `AAAA-MM-DD/NN-nombre-es`, números vacíos,
   `notas` = `pendiente de subir`. No toques las filas que ya están.
 - Recomendá **cuáles 3 subir primero** y por qué (gancho más claro en 3 s, momento más fuerte, lo que dicen las
-  métricas). Sumalos a `_estudio/marketing/calendario.md` en los próximos 3 días libres, a las 19–21 h.
+  métricas). Sumalos a `_estudio/marketing/calendario.md` en los próximos 3 días libres, a las 19–21 h (un solo post por día).
 
 ## 7. Cierre
 Mostrale a Agus: la carpeta, la tabla de clips, los 3 recomendados con el orden, los avisos de la herramienta, y

@@ -33,9 +33,9 @@ Herramientas: Godot (cada juego dice qué versión; INFLATION se arma con `power
 ffmpeg (`winget install Gyan.FFmpeg`) y el Python de Windows con Pillow (`py -m pip install pillow`).
 
 ## Comandos (en Claude Code, abierto en esta carpeta)
-- `/clips <juego>`: propone 10 ideas, graba con el bot del juego, edita los clips con la marca (EN y ES, formato
+- `/clips <juego>`: propone 10 ideas, graba con el bot del juego, edita los clips con la marca (en español, formato
   vertical "blur fill"), escribe los textos, suma filas a métricas y recomienda los 3 primeros. No publica nada.
-- `/presentacion`: video de presentación del estudio (vertical y horizontal, EN y ES) para fijar en los perfiles.
+- `/presentacion`: video de presentación del estudio (vertical y horizontal, en español) para fijar en los perfiles.
   Se regenera con cada juego nuevo.
 - `/semana`: revisión de los domingos: carga métricas, ranking, qué repetir y qué cortar, señal para Steam y el
   plan de la semana en `calendario.md`.

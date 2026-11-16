@@ -1,34 +1,180 @@
 {
   "salida": "_estudio/marketing/presentacion/2026-11-16",
-  "idiomas": ["en", "es"],
-  "formatos": ["vertical", "horizontal"],
+  "idiomas": [
+    "es"
+  ],
+  "formatos": [
+    "vertical",
+    "horizontal"
+  ],
   "modo": "blur",
   "textos": {
-    "globo":  {"en": "I make small, weird games.", "es": "Hago juegos chicos y raros."},
-    "linea1": {"en": "1 dev. 1 mate.", "es": "1 dev. 1 mate."},
-    "linea2": {"en": "Lots of weird ideas.", "es": "Muchas ideas raras."},
-    "pronto": {"en": "More coming soon…", "es": "Se vienen más…"},
-    "cta":    {"en": "Follow for the next one", "es": "Seguime para el próximo"}
+    "globo": {
+      "en": "I make small, weird games.",
+      "es": "Hago juegos chicos y raros."
+    },
+    "linea1": {
+      "en": "1 dev. 1 mate.",
+      "es": "1 dev. 1 mate."
+    },
+    "linea2": {
+      "en": "Lots of weird ideas.",
+      "es": "Muchas ideas raras."
+    },
+    "pronto": {
+      "en": "More coming soon…",
+      "es": "Se vienen más…"
+    },
+    "cta": {
+      "en": "Follow for the next one",
+      "es": "Seguime para el próximo"
+    }
   },
   "itch": "moscode-games.itch.io",
-  "musica": {"fuente": "INFLATION-What-Inflation-/export/clips_crudos/arbol_{idioma}_1920x1080.mp4", "inicio": 0, "volumen": 0.35},
+  "musica": {
+    "fuente": "INFLATION-What-Inflation-/export/clips_crudos/arbol_{idioma}_1920x1080.mp4",
+    "inicio": 0,
+    "volumen": 0.35
+  },
   "pronto": true,
   "tiempos": {
-    "vertical":   {"pop": 2, "logo": 2, "corte": 2, "pronto": 2, "lineas": 4, "cierre": 2},
-    "horizontal": {"pop": 3, "logo": 3, "corte": 4, "pronto": 3, "lineas": 5, "cierre": 4}
+    "vertical": {
+      "pop": 2,
+      "logo": 2,
+      "corte": 2,
+      "pronto": 2,
+      "lineas": 4,
+      "cierre": 2
+    },
+    "horizontal": {
+      "pop": 3,
+      "logo": 3,
+      "corte": 4,
+      "pronto": 3,
+      "lineas": 5,
+      "cierre": 4
+    }
   },
   "momentos": [
-    {"juego": "INFLATION? What Inflation?", "formatos": ["vertical"],   "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sobre_dorada_{idioma}_1920x1080.mp4", "inicio": 4.4,
-     "zoom": {"factor": 1.4, "centro": [1000, 590], "dur": 0}},
-    {"juego": "INFLATION? What Inflation?", "formatos": ["horizontal"], "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sobre_dorada_{idioma}_1920x1080.mp4", "inicio": 3.0, "recorte": [0, 190, 1440, 810]},
-    {"juego": "INFLATION? What Inflation?", "formatos": ["vertical"],   "fuente": "INFLATION-What-Inflation-/export/clips_crudos/billete_{idioma}_1920x1080.mp4", "inicio": 2.4,
-     "zoom": {"factor": 1.5, "centro": [1180, 560], "dur": 0}},
-    {"juego": "INFLATION? What Inflation?", "formatos": ["horizontal"], "fuente": "INFLATION-What-Inflation-/export/clips_crudos/billete_{idioma}_1920x1080.mp4", "inicio": 1.8, "recorte": [480, 190, 1440, 810]},
-    {"juego": "INFLATION? What Inflation?", "formatos": ["vertical"],   "fuente": "INFLATION-What-Inflation-/export/clips_crudos/arbol_{idioma}_1920x1080.mp4", "inicio": 3.0,
-     "zoom": {"factor": 1.15, "centro": [880, 600], "dur": 0}},
-    {"juego": "INFLATION? What Inflation?", "formatos": ["horizontal"], "fuente": "INFLATION-What-Inflation-/export/clips_crudos/arbol_{idioma}_1920x1080.mp4", "inicio": 2.0, "recorte": [0, 90, 1360, 765]},
-    {"juego": "INFLATION? What Inflation?", "formatos": ["vertical"],   "fuente": "INFLATION-What-Inflation-/export/clips_crudos/precio_empanada_{idioma}_1920x1080.mp4", "inicio": 1.0,
-     "zoom": {"factor": 1.8, "centro": [533, 505], "dur": 0}},
-    {"juego": "INFLATION? What Inflation?", "formatos": ["horizontal"], "fuente": "INFLATION-What-Inflation-/export/clips_crudos/precio_empanada_{idioma}_1920x1080.mp4", "inicio": 1.0, "recorte": [0, 205, 1067, 600]}
+    {
+      "juego": "INFLATION? What Inflation?",
+      "formatos": [
+        "vertical"
+      ],
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sobre_dorada_{idioma}_1920x1080.mp4",
+      "inicio": 4.4,
+      "zoom": {
+        "factor": 1.4,
+        "centro": [
+          1000,
+          590
+        ],
+        "dur": 0
+      }
+    },
+    {
+      "juego": "INFLATION? What Inflation?",
+      "formatos": [
+        "horizontal"
+      ],
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sobre_dorada_{idioma}_1920x1080.mp4",
+      "inicio": 3.0,
+      "recorte": [
+        0,
+        190,
+        1440,
+        810
+      ]
+    },
+    {
+      "juego": "INFLATION? What Inflation?",
+      "formatos": [
+        "vertical"
+      ],
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/billete_{idioma}_1920x1080.mp4",
+      "inicio": 2.4,
+      "zoom": {
+        "factor": 1.5,
+        "centro": [
+          1180,
+          560
+        ],
+        "dur": 0
+      }
+    },
+    {
+      "juego": "INFLATION? What Inflation?",
+      "formatos": [
+        "horizontal"
+      ],
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/billete_{idioma}_1920x1080.mp4",
+      "inicio": 1.8,
+      "recorte": [
+        480,
+        190,
+        1440,
+        810
+      ]
+    },
+    {
+      "juego": "INFLATION? What Inflation?",
+      "formatos": [
+        "vertical"
+      ],
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/arbol_{idioma}_1920x1080.mp4",
+      "inicio": 3.0,
+      "zoom": {
+        "factor": 1.15,
+        "centro": [
+          880,
+          600
+        ],
+        "dur": 0
+      }
+    },
+    {
+      "juego": "INFLATION? What Inflation?",
+      "formatos": [
+        "horizontal"
+      ],
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/arbol_{idioma}_1920x1080.mp4",
+      "inicio": 2.0,
+      "recorte": [
+        0,
+        90,
+        1360,
+        765
+      ]
+    },
+    {
+      "juego": "INFLATION? What Inflation?",
+      "formatos": [
+        "vertical"
+      ],
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/precio_empanada_{idioma}_1920x1080.mp4",
+      "inicio": 1.0,
+      "zoom": {
+        "factor": 1.8,
+        "centro": [
+          533,
+          505
+        ],
+        "dur": 0
+      }
+    },
+    {
+      "juego": "INFLATION? What Inflation?",
+      "formatos": [
+        "horizontal"
+      ],
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/precio_empanada_{idioma}_1920x1080.mp4",
+      "inicio": 1.0,
+      "recorte": [
+        0,
+        205,
+        1067,
+        600
+      ]
+    }
   ]
 }

@@ -32,7 +32,9 @@ Actualizá las filas de `_estudio/marketing/metricas.csv` (una fila por clip y r
 
 ## 4. Planear la semana (en `_estudio/marketing/calendario.md`)
 Filas de lunes a domingo de la semana que viene:
-- **1 clip por día**, mismo video en TikTok, Shorts y Reels, 19–21 h. Primero los que quedaron sin subir de tandas
+- **1 clip por día** (un solo post), la versión en español, mismo video en TikTok, Shorts y Reels, 19–21 h.
+  Solo español: no se planean versiones en inglés. Regla de clips: algo tiene que cambiar o crecer en pantalla
+  (MARCA.md); lo que es una acción repetida sin cambio no se sube. Primero los que quedaron sin subir de tandas
   anteriores que se parezcan a los ganadores; si faltan, anotá "nueva tanda con /clips <juego>" y qué momentos grabar.
 - **1 post de Reddit** en primera persona: subreddit del género del juego (después r/IndieDev o r/godot, después
   r/indiegames), con título propuesto y el clip que lo acompaña. Escribí el borrador en la misma semana del calendario.

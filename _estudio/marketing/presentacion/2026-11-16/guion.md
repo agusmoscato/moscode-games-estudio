@@ -1,5 +1,8 @@
 # Presentación de moscode.games (16/11/2026)
 
+> **Solo español (desde el 16/11/2026):** se usan `presentacion-vertical-es.mp4` y `presentacion-horizontal-es.mp4`.
+> Los textos EN de las tablas quedan como referencia; los `-en.mp4` no se suben. Se publica y se fija el 21/11.
+
 Video del **estudio**, no de un juego. Se fija arriba en el perfil de TikTok, Instagram y YouTube (en YouTube, el
 horizontal como tráiler del canal). Solo texto + sonido de los juegos: sin voz ni cara. Sin temas políticos ni
 económicos. Se regenera con `/presentacion` cuando haya un juego nuevo.

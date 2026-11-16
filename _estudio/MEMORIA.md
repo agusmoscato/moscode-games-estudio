@@ -32,7 +32,7 @@ Resumen de lo decidido en claude.ai (proyecto JUEGOS). Los documentos completos 
 - Todos los clips son SOLO texto + sonido del juego: sin voz en off y sin cara (decidido el 16/11/2026). Agus aparece solo como personaje en pixel art (globos de texto y cierre).
 - En los clips, primero el juego y nunca un "hola, soy Agus".
 - La presentación es del estudio moscode.games, no de un juego, y no menciona la inflación ni temas de los juegos. Se regenera con cada juego nuevo. Va fijada arriba en el perfil de TikTok, Instagram y YouTube.
-- 1 clip por día, el mismo video en TikTok, Shorts y Reels, a las 19–21 h de Argentina. Inglés como idioma principal, más una versión en español.
+- 1 clip por día, el mismo video en TikTok, Shorts y Reels, a las 19–21 h de Argentina. Solo en español (decidido el 16/11/2026: clips, presentación, captions, guiones y textos; no se hacen versiones en inglés).
 - Reddit: 1 post por semana en primera persona, en el subreddit del género del juego, después en r/IndieDev o r/godot y en r/indiegames.
 - Steam: pagar los USD 100 recién cuando haya señal (un clip con 50K+ vistas o 3–4 con 10K+, y comentarios que pregunten dónde jugar). Meta: Next Fest de febrero 2027 con más de 1.000 wishlists.
 - Para validar ideas: SIGO si se cumplen 3 de 5:

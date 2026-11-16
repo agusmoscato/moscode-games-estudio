@@ -42,6 +42,8 @@ Sin degradados ni esquinas redondas. Bordes de 4–6 px en tinta y sombra dura d
 - Escalar con nearest neighbor. No redibujar ni cambiar colores.
 
 ## Especificación de clips (TikTok, YouTube Shorts, Instagram Reels)
+- **Solo español** (desde el 16/11/2026): clips, presentación, captions, guiones y textos van solo en español (voseo). No se hacen versiones en inglés.
+- **Algo tiene que cambiar**: Cada clip tiene que tener algo que CAMBIE o CREZCA en pantalla (antes/después, consecuencia, escalada o remate). Una acción repetida sin cambio no es un clip.
 - **Solo texto + sonido del juego**: sin voz en off y sin cara a cámara, en todos los clips, la presentación y los tráileres. Agus aparece solo en pixel art (`personaje/`), con globos de texto o en el cierre.
 - **Presentación**: la presentación es del estudio moscode.games, no de un juego, y no menciona la inflación ni temas de los juegos. Se regenera con cada juego nuevo (`/presentacion`).
 - Formato: MP4 H.264, 1080×1920, 30 o 60 fps, 15–25 s, sonido del juego.
@@ -54,17 +56,16 @@ Sin degradados ni esquinas redondas. Bordes de 4–6 px en tinta y sombra dura d
   - **Arriba del juego**: la caja de gancho. **Abajo del juego**: espacio para un subtítulo corto opcional (Pixelify Sans 700, papel con sombra tinta).
   - **Zoom por escena** (opcional, por defecto sin zoom): si un detalle se ve chico, el frente puede ser un recorte 16:9 de una zona del juego (1,3×–1,5×), yendo suave de la vista completa al zoom. También se usa para dejar afuera montos o textos que no van (por ejemplo, en la presentación del estudio).
   - El modo viejo de recorte vertical (juego recortado en un área de 936×936 o vertical, fondo tinta) queda como opción (`--modo recorte`), no por defecto.
-- **Cierre (últimos 1,5 s)**: `personaje/agus-guino.png` a 96–160 px, "@moscode.games" en Press Start 2P y el llamado a la acción en Pixelify Sans 700 amarillo ("Free demo on itch.io" / "Wishlist on Steam" cuando haya página).
+- **Cierre (últimos 1,5 s)**: `personaje/agus-guino.png` a 96–160 px, "@moscode.games" en Press Start 2P y el llamado a la acción en Pixelify Sans 700 amarillo ("Demo gratis en itch.io" / "Agregalo a tu lista en Steam" cuando haya página).
 - **Zonas seguras**: nada de texto en los 400 px de abajo ni en los 140 px de la derecha (la interfaz de las apps los tapa).
 - Fondo de cierres y carteles: tinta #18191C.
-- Dos versiones de cada clip: inglés (principal) y español.
-- Salida: `clips/AAAA-MM-DD/NN-nombre-en.mp4` y `NN-nombre-es.mp4`, más una hoja de contacto (`contact.png`) para revisar de un vistazo.
+- Salida: `clips/AAAA-MM-DD/NN-nombre-es.mp4`, más una hoja de contacto (`contact.png`) para revisar de un vistazo.
 
 ## Textos de publicación (`clips/AAAA-MM-DD/captions.md`)
 Para cada clip:
 - TikTok / Reels: 1 línea con gancho + pregunta para que comenten + 3–5 hashtags (#indiegame #gamedev #godot + los del género de ESTE juego + el del juego).
 - YouTube Shorts: título ≤ 60 caracteres + misma descripción.
-- En inglés y en español.
+- Solo en español.
 
 ## Reglas de voz
 - Humor argentino que se entienda afuera. Voseo en español.

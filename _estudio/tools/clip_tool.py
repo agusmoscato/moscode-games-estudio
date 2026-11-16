@@ -28,8 +28,8 @@ Formato de tanda.json (las rutas relativas son relativas a la carpeta del estudi
   "salida": "_estudio/marketing/clips/inflation/2026-11-16",
   "formato": "vertical",                        # "vertical" 1080x1920 (clips) u "horizontal" 1920x1080 (tráiler)
   "modo": "blur",                               # vertical: blur (por defecto) | recorte
-  "idiomas": ["en", "es"],
-  "cta": {"en": "Free demo on itch.io", "es": "Demo gratis en itch.io"},
+  "idiomas": ["es"],                            # por defecto solo español; "en" solo si se pide explícitamente
+  "cta": {"es": "Demo gratis en itch.io"},
   "clips": [{
     "n": 1, "nombre": "tijera",
     "fuente": "INFLATION-What-Inflation-/export/clips_crudos/tijera_{idioma}_1920x1080.mp4",   # o {"en": .., "es": ..}
@@ -480,7 +480,7 @@ def armar_clip(tanda: dict, clip: dict, idioma: str, salida: Path, capas: Path, 
             return None
         clip = {k: v for k, v in clip.items() if k not in ("recorte", "inicio", "zoom")}
     else:
-        src_txt = por_idioma(clip["fuente"], idioma) or por_idioma(clip["fuente"], "en")
+        src_txt = por_idioma(clip["fuente"], idioma) or por_idioma(clip["fuente"], "es")
         src = ruta_abs(src_txt.replace("{idioma}", idioma))
     if not src.exists():
         avisar(f"{base}: no existe la grabación {src}")
@@ -550,12 +550,13 @@ def cuadro(video: Path, t: float, ancho: int, tmp: Path) -> Image.Image:
 
 
 def hoja_contacto(carpeta: Path, por_seccion: dict[str, list[float]] | None = None) -> Path | None:
-    """Clips: 4 cuadros del video EN (0,4 s, 35 %, 70 %, cierre) + el gancho del ES.
-    por_seccion = {"vertical": [t, ...], "horizontal": [...]}: una fila por video (EN y ES), un cuadro por sección."""
+    """Clips: 4 cuadros de cada video en español (0,4 s, 35 %, 70 %, cierre).
+    por_seccion = {"vertical": [t, ...], "horizontal": [...]}: una fila por video, un cuadro por sección."""
     if por_seccion:
-        videos = sorted(carpeta.glob("*.mp4"))
+        videos = sorted(carpeta.glob("*-es.mp4")) or sorted(carpeta.glob("*.mp4"))
     else:
-        videos = sorted(carpeta.glob("*-en.mp4")) or sorted(carpeta.glob("*.mp4"))
+        # solo español: los -es.mp4 (los -en.mp4 viejos que queden en la carpeta no se usan)
+        videos = sorted(carpeta.glob("*-es.mp4")) or sorted(carpeta.glob("*.mp4"))
     if not videos:
         print("  (no hay mp4 para la hoja de contacto)")
         return None
@@ -574,10 +575,7 @@ def hoja_contacto(carpeta: Path, por_seccion: dict[str, list[float]] | None = No
             ancho = 216 if vertical else 384
             tiempos = [0.4, info["dur"] * 0.35, info["dur"] * 0.7, info["dur"] - 0.6]
             cuadros = [cuadro(v, t, ancho, tmp) for t in tiempos]
-            es = v.with_name(v.name.replace("-en.mp4", "-es.mp4"))
-            if es != v and es.exists():
-                cuadros.append(cuadro(es, 0.4, ancho, tmp))
-            filas.append((v, info, cuadros, "0,4 s / 35 % / 70 % / cierre" + ("   |   ES" if len(cuadros) > 4 else "")))
+            filas.append((v, info, cuadros, "0,4 s / 35 % / 70 % / cierre"))
         fl = fuente_texto(28)
         sep, cab = 16, 44
         ancho_total = sep + max(sum(c.width + sep for c in cs) for _, _, cs, _ in filas)
@@ -802,7 +800,7 @@ def cmd_presentacion(ruta: Path) -> None:
     """Video de presentación del estudio (skill /presentacion). Formato del JSON:
     {
       "salida": "_estudio/marketing/presentacion/2026-11-16",
-      "idiomas": ["en", "es"], "formatos": ["vertical", "horizontal"],
+      "idiomas": ["es"], "formatos": ["vertical", "horizontal"],      # por defecto solo español
       "textos": {"globo": {...}, "linea1": {...}, "linea2": {...}, "pronto": {...}, "cta": {...}},
       "itch": "moscode-games.itch.io",                 # va abajo del llamado a la acción en la horizontal
       "musica": {"fuente": ".../arbol_{idioma}_1920x1080.mp4", "inicio": 0, "volumen": 0.3},   # colchón de sonido
@@ -832,7 +830,7 @@ def cmd_presentacion(ruta: Path) -> None:
             ts.append(round(t + tm[nombre] * frac, 2))
             t += tm[nombre]
         secciones[formato] = ts
-        for idioma in spec.get("idiomas", ["en", "es"]):
+        for idioma in spec.get("idiomas", ["es"]):
             T = lambda k: por_idioma(tx[k], idioma)
             segs: list[Path] = []
             def nuevo(nombre: str) -> Path:
@@ -889,7 +887,7 @@ def cmd_tanda(ruta: Path, solo_capas: bool) -> None:
     salida.mkdir(parents=True, exist_ok=True)
     capas = salida / "_capas"
     capas.mkdir(exist_ok=True)
-    idiomas = tanda.get("idiomas", ["en", "es"])
+    idiomas = tanda.get("idiomas", ["es"])
     print(f"Tanda {tanda.get('juego', '?')} → {salida}")
     for clip in tanda["clips"]:
         for idioma in idiomas:

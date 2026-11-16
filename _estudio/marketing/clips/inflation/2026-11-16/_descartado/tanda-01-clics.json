@@ -1,0 +1,35 @@
+{
+  "juego": "inflation",
+  "titulo": "INFLATION?",
+  "salida": "_estudio/marketing/clips/inflation/2026-11-16/_descartado",
+  "formato": "vertical",
+  "idiomas": [
+    "es"
+  ],
+  "cta": {
+    "es": "Demo gratis en itch.io"
+  },
+  "clips": [
+    {
+      "n": 1,
+      "nombre": "clics",
+      "fuente": "INFLATION-What-Inflation-/export/clips_crudos/clics_{idioma}_1920x1080.mp4",
+      "inicio": 0.3,
+      "duracion": 23,
+      "zoom": {
+        "factor": 1.5,
+        "centro": [
+          420,
+          360
+        ],
+        "desde": 1.0,
+        "dur": 0.8
+      },
+      "gancho": {
+        "en": "330 clicks on one empanada",
+        "es": "330 clics a una empanada"
+      }
+    }
+  ],
+  "_motivo": "Descartado el 16/11/2026: no pasa nada en 23 s (acción repetida sin cambio; ver regla en MARCA.md)."
+}
