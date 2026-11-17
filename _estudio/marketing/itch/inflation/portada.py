@@ -1,59 +1,70 @@
-"""Portada de itch.io (630x500) para INFLATION, con la marca de _estudio/brand/MARCA.md.
-Uso (desde JUEGOS/): py _estudio/marketing/itch/inflation/portada.py <captura_1920x1080.png> _estudio/marketing/itch/inflation/portada-630x500.png
-La captura de base sale de: INFLATION-What-Inflation-/export/clips_crudos/precio_empanada_es_1920x1080.mp4 (segundo 1)."""
+"""Portada de itch.io (630x500) de INFLATION, igual al artboard "Itch" del canvas de identidad (Design):
+fondo amarillo, borde tinta, título rojo con sombra, "DEMO GRATIS" y la etiqueta de precio tachado girada.
+Uso (desde JUEGOS/): py _estudio/marketing/itch/inflation/portada.py"""
 import sys
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
+from PIL import Image, ImageDraw
 
-RAIZ = Path(r"d:/Usuarios/Agustin/Documents/JUEGOS")
+RAIZ = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(RAIZ / "_estudio" / "tools"))
-sys.argv, args = [sys.argv[0]], sys.argv[1:]
-import clip_tool as ct  # fuentes, colores y cajas de marca
+sys.argv = [sys.argv[0]]
+import clip_tool as ct  # fuentes y colores de la marca
 
-src, out = Path(args[0]), Path(args[1])
+K = 3                               # se dibuja a 3x y se reduce: bordes nítidos
 W, H = 630, 500
-# trabajo a 2x y bajo al final para bordes nítidos
-K = 2
-img = Image.new("RGB", (W * K, H * K), ct.TINTA)
-juego = Image.open(src).convert("RGB")
+GRIS = (0x5F, 0x63, 0x6A)
+s = lambda v: int(round(v * K))
 
-# fondo: la pantalla del juego desenfocada y oscura (mismo criterio que el blur fill)
-fondo = juego.resize((int(1920 * H * K / 1080), H * K), Image.LANCZOS)
-x0 = (fondo.width - W * K) // 2
-fondo = fondo.crop((x0, 0, x0 + W * K, H * K)).filter(ImageFilter.GaussianBlur(18))
-fondo = ImageEnhance.Brightness(fondo).enhance(0.45)
-img.paste(fondo, (0, 0))
+img = Image.new("RGB", (s(W), s(H)), ct.AMARILLO)
 d = ImageDraw.Draw(img)
+d.rectangle([0, 0, s(W) - 1, s(H) - 1], outline=ct.TINTA, width=s(8))
 
-# la empanada del juego (recorte de la captura, zona de la empanada) con marco tinta y sombra roja
-emp = juego.crop((110, 210, 530, 495))            # solo la empanada (sin el contador de plata ni textos)
-ew = 300 * K
-emp = emp.resize((ew, int(ew * emp.height / emp.width)), Image.LANCZOS)
-ex, ey = (W * K - ew) // 2, 186 * K
-ct.caja_marca(d, ex - 6, ey - 6, ex + ew + 5, ey + emp.height + 5, ct.TINTA, ct.TINTA, ct.ROJO, 10 * K // 2)
-img.paste(emp, (ex, ey))
+x, y = 44, 44                       # borde 8 + padding 36
+GAP = 18
+f_pre = ct.fuente_titulo(s(12))
+d.text((s(x), s(y)), "MOSCODE.GAMES PRESENTA", font=f_pre, fill=ct.TINTA)
+y += 12 * 1.6 + GAP
+f_tit = ct.fuente_titulo(s(44))
+d.text((s(x) + s(4), s(y) + s(4)), "INFLATION?", font=f_tit, fill=ct.TINTA)      # sombra dura
+d.text((s(x), s(y)), "INFLATION?", font=f_tit, fill=ct.ROJO)
+y += 44 * 1.25 + GAP
+f_sub = ct.fuente_titulo(s(24))
+d.text((s(x), s(y)), "What Inflation?", font=f_sub, fill=ct.TINTA)
+y += 24 * 1.3 + GAP
+f_txt = ct.fuente_texto(s(22), 400)
+for ln in ct.partir("Un kiosco, precios que suben solos y vos remarcando para no fundirte.", f_txt, s(340)):
+    d.text((s(x), s(y)), ln, font=f_txt, fill=ct.TINTA)
+    y += 22 * 1.35
 
-# caja de título (amarilla, borde papel, sombra roja)
-ft = ct.fuente_titulo(28 * K)
-fs = ct.fuente_texto(30 * K)
-t1, t2 = "INFLATION?", "What Inflation?"
-bw = int(max(ft.getlength(t1), fs.getlength(t2))) + 60 * K
-bx0 = (W * K - bw) // 2
-by0, by1 = 34 * K, 34 * K + 120 * K
-ct.caja_marca(d, bx0, by0, bx0 + bw, by1, ct.AMARILLO, ct.PAPEL, ct.ROJO, 8 * K, 4 * K)
-ct.texto_centrado(d, W * K // 2, by0 + 26 * K, [t1], ft, ct.TINTA)
-ct.texto_centrado(d, W * K // 2, by0 + 68 * K, [t2], fs, ct.TINTA)
+# botón DEMO GRATIS abajo a la izquierda (margin-top: auto)
+f_btn = ct.fuente_titulo(s(14))
+bw, bh = f_btn.getlength("DEMO GRATIS") + s(32), s(14) + s(28)
+by1 = s(H - 44)
+by0 = by1 - bh
+d.rectangle([s(x) + s(5), by0 + s(5), s(x) + bw + s(5), by1 + s(5)], fill=ct.ROJO)
+d.rectangle([s(x), by0, s(x) + bw, by1], fill=ct.TINTA)
+d.text((s(x) + s(16), by0 + s(14)), "DEMO GRATIS", font=f_btn, fill=ct.AMARILLO)
 
-# franja de abajo: >_ + @moscode.games y "Demo gratis"
-logo = Image.open(RAIZ / "_estudio" / "brand" / "logo" / "logo-256.png").convert("RGB").resize((64 * K, 64 * K), Image.NEAREST)
-img.paste(logo, (24 * K, H * K - 88 * K))
-fm = ct.fuente_titulo(16 * K)
-d.text((100 * K, H * K - 70 * K), "moscode", font=fm, fill=ct.PAPEL)
-d.text((100 * K + fm.getlength("moscode"), H * K - 70 * K), ".games", font=fm, fill=ct.AMARILLO)
-fd = ct.fuente_texto(26 * K)
-txt = "Demo gratis"
-tw = fd.getlength(txt)
-d.text((W * K - 28 * K - tw, H * K - 76 * K), txt, font=fd, fill=ct.AMARILLO)
+# etiqueta de precio: papel, borde tinta 4, sombra tinta 6, girada -8° (antihorario), abajo a la derecha
+f_viejo = ct.fuente_texto(s(18), 400)
+f_nuevo = ct.fuente_texto(s(40), 700)
+tw = max(f_viejo.getlength("$ 100"), f_nuevo.getlength("$ 1.250"))
+ew, eh = int(tw) + s(36) + s(8), s(18 * 1.2) + s(40 * 1.15) + s(28) + s(8)
+tag = Image.new("RGBA", (ew + s(6), eh + s(6)), (0, 0, 0, 0))
+td = ImageDraw.Draw(tag)
+td.rectangle([s(6), s(6), ew - 1 + s(6), eh - 1 + s(6)], fill=ct.TINTA)
+td.rectangle([0, 0, ew - 1, eh - 1], fill=ct.TINTA)
+td.rectangle([s(4), s(4), ew - 1 - s(4), eh - 1 - s(4)], fill=ct.PAPEL)
+tx, ty = s(4) + s(18), s(4) + s(14)
+td.text((tx, ty), "$ 100", font=f_viejo, fill=GRIS)
+vw = f_viejo.getlength("$ 100")
+ly = ty + s(18) * 0.62
+td.line([tx, ly, tx + vw, ly], fill=GRIS, width=s(2))                           # tachado
+td.text((tx, ty + s(18 * 1.2)), "$ 1.250", font=f_nuevo, fill=ct.ROJO)
+rot = tag.rotate(8, resample=Image.BICUBIC, expand=True)                       # PIL: positivo = antihorario
+cx, cy = s(W - 30) - ew // 2, s(H - 30) - eh // 2                               # centro de la caja sin rotar
+img.paste(rot, (cx - rot.width // 2, cy - rot.height // 2), rot)
 
+out = Path(__file__).with_name("portada-630x500.png")
 img.resize((W, H), Image.LANCZOS).save(out)
 print("ok", out)
