@@ -36,7 +36,10 @@ Un clip puede llevar `"montaje"` en vez de `"fuente"`: tramos de una sesión lar
 su aceleración (`"vel"`: x2–x8 en lo lento, x1 en los picos), `"golpe"` (flash + refuerzo del sonido del juego al
 empezar el tramo), `"zoom"` y `"fuente"` propia (para mezclar sesiones, p. ej. vuelta 1 y vuelta 36). `"contador"`
 pone "Minuto N" arriba a la izquierda según el tiempo real de la grabación; `"etiqueta"` lo pisa por tramo
-("Vuelta 36 · Hora 2"). La duración del clip es la suma de los tramos. Ejemplo: `_estudio/marketing/clips/inflation/2026-11-16-b/tanda.json`.
+("Vuelta 36 · Hora 2"); `"cartel"` pone un texto grande abajo del juego durante el tramo (regla 10 de MARCA.md:
+números gigantes traducidos, p. ej. "¡MÁS DE 36 CEROS!"; `ceros(valor)` arma el texto). Ojo: la plata cambia dentro del
+tramo; el número del cartel tiene que ser cierto durante TODO el tramo (mirar el log de beats). La duración del clip es
+la suma de los tramos. Ejemplo: `_estudio/marketing/clips/inflation/2026-11-16-b/tanda.json`.
 
 ### Presentación del estudio
 ```

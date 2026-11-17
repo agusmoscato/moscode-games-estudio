@@ -431,7 +431,8 @@ def unir_tramos(clip: dict, idioma: str, destino: Path, lienzo_def=(1080, 1080))
 #             "contador": {"formato": "Minuto {m}", "origen": 0},          # opcional: "Minuto N" en una esquina
 #             "tramos": [{"desde": 12.0, "hasta": 40.0, "vel": 8, "golpe": true, "zoom": {...}, "etiqueta": "Vuelta 10"}]}
 # Cada tramo se corta de la grabación larga y se acelera "vel" veces (x2–x8 en los tramos lentos, x1 en los picos);
-# "golpe" = flash corto + refuerzo del sonido del juego al empezar el tramo; "etiqueta" pisa el contador en ese tramo.
+# "golpe" = flash corto + refuerzo del sonido del juego al empezar el tramo; "etiqueta" pisa el contador en ese tramo;
+# "cartel" = texto grande abajo del juego durante el tramo (números gigantes traducidos: usar ceros(valor)).
 def montaje_duracion(mt: dict) -> float:
     return round(sum((float(t["hasta"]) - float(t["desde"])) / float(t.get("vel", 1)) for t in mt["tramos"]), 3)
 
@@ -456,6 +457,34 @@ def capa_contador(W: int, H: int, texto: str) -> Image.Image:
     caja_marca(d, x0, y0, x0 + w + 36, y0 + alto_linea(f) + 18, TINTA, PAPEL, ROJO, 6, 4)
     d.text((x0 + 18, y0 + 8), texto, font=f, fill=AMARILLO)
     return img
+
+
+def capa_cartel(W: int, H: int, texto: str) -> Image.Image:
+    """Cartel grande abajo del juego (MARCA.md, regla 10: traduce los números gigantes, p. ej. "¡UN 6 CON 33 CEROS!").
+    Caja amarilla con borde tinta y sombra roja; no entra en los 400 px de abajo ni en los 140 px de la derecha."""
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    for px in range(84, 43, -4):
+        f = fuente_texto(px)
+        lineas = partir_parejo(texto, f, 740)
+        alto = len(lineas) * (alto_linea(f) + 2) + 36
+        if len(lineas) <= 2 and SUB_Y + alto <= H - 400 - 20:
+            break
+    ancho = int(max(f.getlength(l) for l in lineas)) + 60
+    x0 = W // 2 - ancho // 2
+    caja_marca(d, x0, SUB_Y, x0 + ancho, SUB_Y + alto, AMARILLO, TINTA, ROJO, 10)
+    texto_centrado(d, W // 2, SUB_Y + 16, lineas, f, TINTA, 2)
+    return img
+
+
+def ceros(valor: float) -> str:
+    """Traduce un monto gigante a ceros: 5.97e33 → "¡UN 6 CON 33 CEROS!" (para los carteles de la regla 10)."""
+    import math
+    e = int(math.floor(math.log10(valor)))
+    m = round(valor / 10 ** e)
+    if m >= 10:
+        m, e = 1, e + 1
+    return f"¡UN {m} CON {e} CEROS!"
 
 
 def montar(clip: dict, idioma: str, destino: Path) -> Path | None:
@@ -503,6 +532,10 @@ def capas_montaje(clip: dict, W: int, H: int, base: str, capas: Path, hasta: flo
         d_out = (b - a) / v
         if t.get("golpe") and t_out < hasta:
             out.append((flash, f"between(t,{t_out:.3f},{t_out + 0.12:.3f})"))
+        if t.get("cartel") and t_out < hasta:
+            pc = capas / f"{base}-cartel{i}.png"
+            capa_cartel(W, H, str(t["cartel"])).save(pc)
+            out.append((pc, f"between(t,{t_out:.3f},{min(t_out + d_out, hasta):.3f})"))
         if cont or t.get("etiqueta"):
             # cortes del tramo donde cambia la etiqueta (cada minuto de la grabación)
             puntos = [a]

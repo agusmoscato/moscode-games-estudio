@@ -87,6 +87,14 @@
         "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_progresion_{idioma}_1920x1080.mp4",
         "tramos": [
           {
+            "desde": 11.95,
+            "hasta": 12.95,
+            "vel": 1,
+            "golpe": true,
+            "etiqueta": "Vuelta 36 · Hora 2",
+            "cartel": "¡MÁS DE 36 CEROS!"
+          },
+          {
             "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_vuelta1_{idioma}_1920x1080.mp4",
             "desde": 1.5,
             "hasta": 7.5,
@@ -122,7 +130,7 @@
             "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_vuelta1_{idioma}_1920x1080.mp4",
             "desde": 120.0,
             "hasta": 135.0,
-            "vel": 7.5,
+            "vel": 15,
             "etiqueta": "Vuelta 1 · Minuto 3"
           },
           {
@@ -130,41 +138,47 @@
             "hasta": 3.6,
             "vel": 1,
             "golpe": true,
-            "etiqueta": "Vuelta 36 · Hora 2"
+            "etiqueta": "Vuelta 36 · Hora 2",
+            "cartel": "¡MÁS DE 29 CEROS!"
           },
           {
             "desde": 4.5,
             "hasta": 7.5,
             "vel": 1.5,
             "golpe": true,
-            "etiqueta": "Vuelta 36 · Hora 2"
+            "etiqueta": "Vuelta 36 · Hora 2",
+            "cartel": "¡MÁS DE 31 CEROS!"
           },
           {
             "desde": 8.8,
             "hasta": 11.8,
             "vel": 1.5,
             "golpe": true,
-            "etiqueta": "Vuelta 36 · Hora 2"
+            "etiqueta": "Vuelta 36 · Hora 2",
+            "cartel": "¡MÁS DE 34 CEROS!"
           },
           {
             "desde": 20.8,
             "hasta": 24.8,
             "vel": 2,
             "golpe": true,
-            "etiqueta": "Vuelta 36 · Hora 2"
+            "etiqueta": "Vuelta 36 · Hora 2",
+            "cartel": "¡MÁS DE 38 CEROS!"
           },
           {
             "desde": 40.0,
             "hasta": 60.0,
             "vel": 10,
-            "etiqueta": "Vuelta 36 · Hora 2"
+            "etiqueta": "Vuelta 36 · Hora 2",
+            "cartel": "¡MÁS DE 40 CEROS!"
           },
           {
             "desde": 60.0,
             "hasta": 71.4,
             "vel": 3.8,
             "golpe": true,
-            "etiqueta": "Vuelta 36 · Hora 2"
+            "etiqueta": "Vuelta 36 · Hora 2",
+            "cartel": "¡MÁS DE 41 CEROS!"
           }
         ]
       }
@@ -178,66 +192,77 @@
       "montaje": {
         "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_imprenta_{idioma}_1920x1080.mp4",
         "contador": {
-          "formato": "Minuto {m}",
+          "formato": "Vuelta 36 · Minuto {m}",
           "origen": 0
         },
         "tramos": [
           {
+            "fuente": "INFLATION-What-Inflation-/export/clips_crudos/sesion_casi_pierdo_{idioma}_1920x1080.mp4",
+            "desde": 129.0,
+            "hasta": 132.0,
+            "vel": 1,
+            "golpe": true,
+            "etiqueta": "Vuelta 4 · ¡HIPERINFLACIÓN!"
+          },
+          {
             "desde": 0.6,
             "hasta": 2.6,
             "vel": 1,
-            "golpe": true
+            "golpe": true,
+            "cartel": "¡MÁS DE 28 CEROS!"
           },
           {
             "desde": 2.6,
             "hasta": 6.6,
             "vel": 2,
-            "golpe": true
+            "golpe": true,
+            "cartel": "¡MÁS DE 33 CEROS!"
           },
           {
             "desde": 6.6,
             "hasta": 12.6,
             "vel": 3,
-            "golpe": true
+            "golpe": true,
+            "cartel": "¡MÁS DE 35 CEROS!"
           },
           {
             "desde": 19.5,
             "hasta": 23.5,
             "vel": 2,
-            "golpe": true
+            "golpe": true,
+            "cartel": "¡MÁS DE 38 CEROS!"
           },
           {
             "desde": 30.0,
             "hasta": 50.0,
-            "vel": 10
+            "vel": 20,
+            "cartel": "¡MÁS DE 39 CEROS!"
           },
           {
             "desde": 50.0,
             "hasta": 70.0,
             "vel": 10,
-            "golpe": true
+            "golpe": true,
+            "cartel": "¡MÁS DE 40 CEROS!"
           },
           {
             "desde": 70.0,
-            "hasta": 100.0,
-            "vel": 15
-          },
-          {
-            "desde": 100.0,
             "hasta": 130.0,
-            "vel": 15,
-            "golpe": true
+            "vel": 30,
+            "golpe": true,
+            "cartel": "¡MÁS DE 40 CEROS!"
           },
           {
             "desde": 130.0,
             "hasta": 145.0,
-            "vel": 4
+            "vel": 7.5
           },
           {
             "desde": 145.0,
             "hasta": 150.0,
             "vel": 1,
-            "golpe": true
+            "golpe": true,
+            "cartel": "¡500 IMPRENTAS!"
           }
         ]
       }

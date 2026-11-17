@@ -71,6 +71,9 @@ Sin degradados ni esquinas redondas. Bordes de 4–6 px en tinta y sombra dura d
 7. **El gancho promete la escalada o la tensión**, no la acción repetida ("De vender empanadas a imprimir billetes", "Casi me funde la inflación", "¿Cuánto podés juntar antes de que te coma la inflación?").
 8. **Preguntas**: al menos 3 clips por tanda terminan (gancho o caption) con una pregunta que invite a comentar ("¿Qué hubieras comprado vos?", "¿Hasta dónde llegás?").
 9. **Juice al máximo**: al grabar, las opciones más altas del juego (partículas, sacudón, calidad, volumen de efectos).
+10. **Números gigantes legibles**: si en pantalla aparece un número en notación del juego (Qa, Oc, Dc, e40…), el clip
+    lleva un cartel grande que lo traduzca contando ceros: "$5,97 Dc" → "¡UN 6 CON 33 CEROS!" (sufijos del juego:
+    K 10³, M 10⁶, B 10⁹, T 10¹², Qa 10¹⁵, Qi 10¹⁸, Sx 10²¹, Sp 10²⁴, Oc 10²⁷, No 10³⁰, Dc 10³³; después, "e").
 
 **Formatos** (al menos 5 distintos por tanda): progresión comprimida (una partida entera en 23 s) · casi pierdo (se dispara, pizarrón rojo, remontada) · decisión con consecuencia (elige y se ve el resultado grande) · antes / después (minuto 1 vs. minuto 30, o antes y después de la tijera) · lluvia (abundancia exagerada que termina en algo enorme) · error que da bronca (una jugada medio mala a propósito que se paga, para que comenten "yo lo hacía mejor") · suspenso con remate (sobres o raspaditas acelerados: solo la tensión y el premio).
 
